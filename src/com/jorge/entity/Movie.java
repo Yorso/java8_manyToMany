@@ -29,7 +29,7 @@ public class Movie {
 	private String name;
 	
 	@ManyToMany(cascade={CascadeType.PERSIST})
-	@JoinTable( // This creates a intermediate table/join table/link table called 'movie_actor' with IDs of movie and actor tables
+	@JoinTable( // This creates a 'movie_actor' intermediate table/join table/link table whose fields are the IDs of movie and actor tables
 			name="movie_actor",
 			joinColumns={@JoinColumn(name="movie_id")},
 		    inverseJoinColumns={@JoinColumn(name="actor_id")}
