@@ -46,9 +46,9 @@ public class MainInverseEnd {
 			Actor actor = (Actor) session.get(Actor.class, 2L);
 			
 			// Remember that Movie is the Owner of the relationship
-			logger.debug("updating data from inverse end side, not form owner? =>>> NO WAY!!!");
+			logger.debug("updating data from inverse end side, not from owner? =>>> NO WAY!!!");
 			actor.getMovies().add(movie); // Updating inverse end??? => The inverse end will be ignored when updating the relationship values in the join table.
-			                              // Remember that inverse end is not responsible for the relationship, so it will not update 'movie_actor' join table, it will do nothing in that table
+			                              // Remember that inverse end is not responsible for the relationship, so it will not update 'movie_actor' join table, it will have no effect in that table
 			logger.debug("updating data from owner? =>>> OK!!!");
 			movie.getActors().add(actor); // Updating owner => this is the way to update the join table, new row in 'movie_actor' join table
 			
